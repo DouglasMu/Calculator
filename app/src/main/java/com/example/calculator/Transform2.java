@@ -28,7 +28,7 @@ public class Transform2 extends AppCompatActivity {
         e2 = (EditText) findViewById(R.id.two);
         e10 = (EditText) findViewById(R.id.ten);
         e16 = (EditText) findViewById(R.id.sixt);
-
+        //重置按钮触发器
         clear22.setOnClickListener((new View.OnClickListener() {
             public void onClick(View v) {
                 e2.setText("");

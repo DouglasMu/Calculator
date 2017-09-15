@@ -272,14 +272,9 @@ public class Land_MainActivity extends Activity {
             input.append(str);
         vbegin = false;
     }
-    /*
-     * 判断一个str是否是合法的，返回值为true、false
-     * 只包含0123456789.()sincostanlnlogn!+-×÷√^的是合法的str，返回true
-     * 包含了除0123456789.()sincostanlnlogn!+-×÷√^以外的字符的str为非法的，返回false
-     */
     private boolean right(String str) {
-        int i = 0;
-        for(i = 0;i < str.length();i++) {
+        int i ;
+        for(i=0;i < str.length();i++) {
             if(str.charAt(i)!='0' && str.charAt(i)!='1' && str.charAt(i)!='2' &&
                     str.charAt(i)!='3' && str.charAt(i)!='4' && str.charAt(i)!='5' &&
                     str.charAt(i)!='6' && str.charAt(i)!='7' && str.charAt(i)!='8' &&
@@ -298,13 +293,7 @@ public class Land_MainActivity extends Activity {
             return false;
         }
     }
-    /*
-     * 检测函数，返回值为3、2、1  表示应当一次删除几个？  Three+Two+One = TTO
-     * 为Bksp按钮的删除方式提供依据
-     * 返回3，表示str尾部为sin、cos、tan、log中的一个，应当一次删除3个
-     * 返回2，表示str尾部为ln、n!中的一个，应当一次删除2个
-     * 返回1，表示为除返回3、2外的所有情况，只需删除一个（包含非法字符时要另外考虑：应清屏）
-     */
+
     private int TTO(String str) {
         if((str.charAt(str.length() - 1) == 'n' &&
                 str.charAt(str.length() - 2) == 'i' &&
@@ -709,7 +698,7 @@ public class Land_MainActivity extends Activity {
                         case '÷':
                             weightTemp = 2 + weightPlus;
                             break;
-                        //sincos之类优先级为3
+                        //sin cos之类优先级为3
                         case 's':
                         case 'c':
                         case 't':
@@ -997,10 +986,10 @@ public class Land_MainActivity extends Activity {
                     message = "函数格式错误";
                     break;
                 case 3:
-                    message = "值太大了，超出范围";
+                    message = "超出范围";
             }
             input.setText("\""+str+"\""+": "+message);
-            tip.setText(message+"\n"+"计算完毕，要继续请按归零键 C");
+            tip.setText(message+"\n"+"计算完毕，继续请按 C");
         }
     }
 }

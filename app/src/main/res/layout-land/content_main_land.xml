@@ -212,14 +212,14 @@
         android:layout_width="45sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="262sp"
-        android:text="提示："
+        android:text="@string/report"
         />
     <TextView android:id="@+id/tip"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="262sp"
         android:layout_marginLeft="40sp"
-        android:text="欢迎使用！"
+        android:text="@string/welcome"
         />
 
 </RelativeLayout>
