@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.calculator.transformActivity"
+    tools:context="com.example.calculator.Transform1"
     android:weightSum="1">
     <TextView
         android:layout_width="wrap_content"
@@ -168,10 +168,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/clear2"
             android:text="重置"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/returnn"
-            android:text="返回计算器"/>
+
     </LinearLayout>
 </TableLayout>

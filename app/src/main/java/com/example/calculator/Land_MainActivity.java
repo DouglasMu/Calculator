@@ -105,8 +105,6 @@ public class Land_MainActivity extends Activity {
             left.setOnClickListener(actionPerformed);
             right.setOnClickListener(actionPerformed);
             dot.setOnClickListener(actionPerformed);
-            // exit.setOnClickListener(actionPerformed);
-            // drg.setOnClickListener(actionPerformed);
             mc.setOnClickListener(actionPerformed);
             c.setOnClickListener(actionPerformed);
         }
@@ -118,12 +116,7 @@ public class Land_MainActivity extends Activity {
 
     }
 
-    /*
-     * 键盘命令捕捉
-     */
-    //命令缓存，用于检测输入合法性
     String[] Tipcommand = new String[500];
-    //Tipcommand的指针
     int tip_i = 0;
     private OnClickListener actionPerformed = new OnClickListener() {
         public void onClick(View v) {

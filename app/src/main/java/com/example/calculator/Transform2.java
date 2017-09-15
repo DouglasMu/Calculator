@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class Transform2 extends AppCompatActivity {
     EditText e2,e10,e16;
     String s2,s10,s16;
-    Button b2,b10,b16,re2,clear22;
+    Button b2,b10,b16,clear22;
     int i2,i10,i16;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,19 +23,12 @@ public class Transform2 extends AppCompatActivity {
         b2 = (Button) findViewById(R.id.btwo);
         b10 = (Button) findViewById(R.id.bten);
         b16 = (Button) findViewById(R.id.bsixt);
-        re2 = (Button) findViewById(R.id.returnn2);
         clear22 = (Button) findViewById(R.id.clear22);
 
         e2 = (EditText) findViewById(R.id.two);
         e10 = (EditText) findViewById(R.id.ten);
         e16 = (EditText) findViewById(R.id.sixt);
 
-        re2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(Transform2.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
         clear22.setOnClickListener((new View.OnClickListener() {
             public void onClick(View v) {
                 e2.setText("");
@@ -93,7 +86,7 @@ public class Transform2 extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.transform:
-                Intent intent2=new Intent(Transform2.this,transformActivity.class);
+                Intent intent2=new Intent(Transform2.this,Transform1.class);
                 startActivity(intent2);
                 break;
             case R.id.transform2:

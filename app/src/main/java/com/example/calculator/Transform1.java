@@ -11,11 +11,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class transformActivity extends AppCompatActivity {
+public class Transform1 extends AppCompatActivity {
 
     EditText e_li, e_m, e_chi, e_zhang, e_cun, e_fen, e_mile, e_foot, e_inch;
     String s_li, s_m, s_chi, s_zhang, s_cun, s_fen, s_mile, s_foot, s_inch;
-    Button b_li, b_m, b_chi, b_zhang, b_cun, b_fen, b_mile, b_foot, b_inch, re, clear2;
+    Button b_li, b_m, b_chi, b_zhang, b_cun, b_fen, b_mile, b_foot, b_inch,  clear2;
     double d_li, d_m, d_chi, d_zhang, d_cun, d_fen, d_mile, d_foot, d_inch;
 
     @Override
@@ -32,7 +32,6 @@ public class transformActivity extends AppCompatActivity {
         b_mile = (Button) findViewById(R.id.btn_mile);
         b_foot = (Button) findViewById(R.id.btn_foot);
         b_inch = (Button) findViewById(R.id.btn_inch);
-        re = (Button) findViewById(R.id.returnn);
         clear2 = (Button) findViewById(R.id.clear2);
         e_li = (EditText) findViewById(R.id.et_li);
         e_m = (EditText) findViewById(R.id.et_m);
@@ -44,12 +43,6 @@ public class transformActivity extends AppCompatActivity {
         e_foot = (EditText) findViewById(R.id.et_foot);
         e_inch = (EditText) findViewById(R.id.et_inch);
 
-        re.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(transformActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
         clear2.setOnClickListener((new View.OnClickListener() {
             public void onClick(View v) {
                 e_li.setText("");
@@ -289,14 +282,14 @@ public class transformActivity extends AppCompatActivity {
 
         switch (id) {
             case R.id.calculator:
-                Intent intent=new Intent(transformActivity.this,MainActivity.class);
+                Intent intent=new Intent(Transform1.this,MainActivity.class);
                 startActivity(intent);
                 break;
             case R.id.transform:
                 Toast.makeText(this, "这个就是单位转换器！", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.transform2:
-                Intent intent2=new Intent(transformActivity.this,Transform2.class);
+                Intent intent2=new Intent(Transform1.this,Transform2.class);
                 startActivity(intent2);
                 break;
             case R.id.exit:

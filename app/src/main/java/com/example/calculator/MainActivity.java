@@ -86,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
                 text.setText(s);
             }
             if (btn.getId() == R.id.add || btn.getId() == R.id.divide || btn.getId() == R.id.cut || btn.getId() == R.id.rid) {
-                //Toast.makeText(MainActivity.this, btn.getText(), Toast.LENGTH_LONG).show();
                 //如果已经有两个数，再按运算符就直接把结果运算出来保存到a中然后继续运算
                 if (s == null || s.equals("")) {
                     s = "0";
@@ -148,7 +147,6 @@ public class MainActivity extends AppCompatActivity {
                     s = "0";
                 }
 
-                //Toast.makeText(MainActivity.this, btn.getText(), Toast.LENGTH_LONG).show();
                 if(option == 0){
                     if(fff == 1)
                         sum =a +b ;
@@ -213,7 +211,6 @@ public class MainActivity extends AppCompatActivity {
             }
             //清除
             if (btn.getId() == R.id.clear) {
-                //Toast.makeText(MainActivity.this, btn.getText(), Toast.LENGTH_LONG).show();
                 text.setText("");
                 pointCount = 0;
                 option = 0;
@@ -286,7 +283,6 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main,menu);
         return true;
     }
@@ -298,7 +294,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "这个就是计算器！", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.transform:
-                Intent intent=new Intent(MainActivity.this,transformActivity.class);
+                Intent intent=new Intent(MainActivity.this,Transform1.class);
                 startActivity(intent);
                 break;
             case R.id.transform2:

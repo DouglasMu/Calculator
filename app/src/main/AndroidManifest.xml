@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".transformActivity" />
+        <activity android:name=".Transform1" />
         <activity android:name=".Transform2" />
         <activity android:name=".Land_MainActivity"></activity>
     </application>

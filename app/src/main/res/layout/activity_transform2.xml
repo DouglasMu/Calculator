@@ -78,10 +78,5 @@
             android:layout_height="wrap_content"
             android:id="@+id/clear22"
             android:text="重置"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/returnn2"
-            android:text="返回计算器"/>
     </LinearLayout>
 </TableLayout>
