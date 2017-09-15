@@ -1,5 +1,6 @@
 package com.example.calculator;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,12 +10,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 public class Transform2 extends AppCompatActivity {
     EditText e2,e10,e16;
     String s2,s10,s16;
     Button b2,b10,b16,clear22;
+    private Dialog mDialog;
     int i2,i10,i16;
+    public boolean isNumeric(String str){
+        Pattern pattern = Pattern.compile("[0-9]*");
+        Matcher isNum = pattern.matcher(str);
+        if( !isNum.matches() ){
+            return false;
+        }
+        return true;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,20 +47,38 @@ public class Transform2 extends AppCompatActivity {
                 e16.setText("");
             }
         }));
+        final View.OnClickListener wButtonOnClick=new  View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDialog.cancel();
+            }
+        };
         b2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 s2 = e2.getText().toString();
+                boolean s=isNumeric(s2);
+                if(s==true&&s2!="") {
+                    s10 = Integer.valueOf(s2, 2).toString();
+                    s16 = Integer.toHexString(Integer.parseInt(s2, 2));
 
-                s10 = Integer.valueOf(s2, 2).toString();
-                s16 = Integer.toHexString(Integer.parseInt(s2, 2));
-
-                e10.setText(s10);
-                e16.setText(s16);
+                    e10.setText(s10);
+                    e16.setText(s16);
+                }else{
+                    mDialog = new Dialog(Transform2.this);
+                    mDialog.setTitle("提示");
+                    mDialog.setCancelable(false);
+                    mDialog.setContentView(R.layout.error);
+                    Button wButton = (Button) mDialog.findViewById(R.id.button);
+                    wButton.setOnClickListener(wButtonOnClick);
+                    mDialog.show();
+                }
             }
         });
         b10.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 s10 = e10.getText().toString();
+                boolean s=isNumeric(s10);
+                if(s==true&&s10!=null){
                 i10 = Integer.parseInt(s10);
 
                 s2 = Integer.toBinaryString(i10);
@@ -58,17 +87,36 @@ public class Transform2 extends AppCompatActivity {
 
                 e2.setText(s2);
                 e16.setText(s16);
+                }else{
+                    mDialog = new Dialog(Transform2.this);
+                    mDialog.setTitle("提示");
+                    mDialog.setCancelable(false);
+                    mDialog.setContentView(R.layout.error);
+                    Button wButton = (Button) mDialog.findViewById(R.id.button);
+                    wButton.setOnClickListener(wButtonOnClick);
+                    mDialog.show();
+                }
             }
         });
         b16.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 s16 = e16.getText().toString();
+                boolean s=isNumeric(s16);
+                if (s==true&&s16!="") {
+                    s2 = Integer.toBinaryString(Integer.valueOf(s16, 16));
+                    s10 = Integer.valueOf(s16, 16).toString();
 
-                s2 = Integer.toBinaryString(Integer.valueOf(s16, 16));
-                s10 = Integer.valueOf(s16, 16).toString();
-
-                e2.setText(s2);
-                e10.setText(s10);
+                    e2.setText(s2);
+                    e10.setText(s10);
+                }else{
+                    mDialog = new Dialog(Transform2.this);
+                    mDialog.setTitle("提示");
+                    mDialog.setCancelable(false);
+                    mDialog.setContentView(R.layout.error);
+                    Button wButton = (Button) mDialog.findViewById(R.id.button);
+                    wButton.setOnClickListener(wButtonOnClick);
+                    mDialog.show();
+                }
             }
         });
     }

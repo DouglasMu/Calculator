@@ -1,5 +1,6 @@
 package com.example.calculator;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     public double pi=4*Math.atan(1);
+    private Dialog mDlgLogin;
     TextView textView;//显示窗口
     Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button0;//数字键
     Button add, cut, rid, divide;//四则运算符号
@@ -224,6 +226,7 @@ public class MainActivity extends AppCompatActivity {
             setContentView(R.layout.activity_main);
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
+
             textView = (TextView) findViewById(R.id.textView);
             button1 = (Button) findViewById(R.id.btn1);
             button2 = (Button) findViewById(R.id.btn2);
