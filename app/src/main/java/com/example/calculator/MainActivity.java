@@ -13,38 +13,34 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
+    public double pi=4*Math.atan(1);
     TextView textView;
-    Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button0;
-    Button add, cut, rid, divide;//加减乘除
+    Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button0;//数字键
+    Button add, cut, rid, divide;//四则运算符号
     Button result;
     Button point;
-    Button clear;
-    Button sin, cos, pingfang, genhao;
+    Button clear;//清屏
+    Button sin, cos, square, sqrt;//s正弦  余弦 平方  根号
     int pointCount = 0;
     int option = 0;//运算符状态
-    int fff = 0;//连加连减判断符号
-    boolean newdigital = true;//标记是否是新输入的数字
-    boolean flag = true;//判断程序是否出错
-    double a = 0, b = 0;//两个相加的数
-    double sum = 0;
-    double sumtype = 0;//判断输出的数是否有小数部分
-    View.OnClickListener lisenter = new View.OnClickListener() {
-
-
+    int d = 0;//连加连减判断符号
+    boolean flag = true;//标记程序是否出错
+    double a = 0, b = 0;
+    double sum = 0;//结果
+    double decimal = 0;//判断输出的数是否有小数部分
+    View.OnClickListener MainListener  = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             TextView text = (TextView) findViewById(R.id.textView);
             String s = text.getText().toString();//获取文本框显示的字符串
             Button btn = (Button) v;
-            String t = (String) btn.getText();//获取按钮的字符
             //数字的输入
             if (btn.getId() == R.id.btn0 || btn.getId() == R.id.btn1 || btn.getId() == R.id.btn2 || btn.getId() == R.id.btn3
                     || btn.getId() == R.id.btn4 || btn.getId() == R.id.btn5 || btn.getId() == R.id.btn6 ||
                     btn.getId() == R.id.btn7 || btn.getId() == R.id.btn8 || btn.getId() == R.id.btn9 ||
                     (btn.getId() == R.id.btnPoint && pointCount == 0)) {
                 if (btn.getId() == R.id.btnPoint) {
-                    if (null == s || s.equals("")) {
+                    if ( s.equals("")) {
                         s += "0" + btn.getText();
                     } else {
                         s += btn.getText();
@@ -57,22 +53,22 @@ public class MainActivity extends AppCompatActivity {
 
             }
             //运算符的输入
-            if (btn.getId() == R.id.sin || btn.getId() == R.id.cos || btn.getId() == R.id.pingfang || btn.getId() == R.id.genhao) {
-                if (s == null || s.equals("")) {
+            if (btn.getId() == R.id.sin || btn.getId() == R.id.cos || btn.getId() == R.id.square || btn.getId() == R.id. sqrt) {
+                if ( s.equals("")) {
                     s = "0";
                 }
                 b = Double.valueOf(s);
                 switch (btn.getId()) {
                     case R.id.sin:
-                        sum = Math.sin(b);
+                        sum = Math.sin((b/180)*pi);
                         break;
                     case R.id.cos:
-                        sum = Math.sin(b);
+                        sum = Math.sin((b/180)*pi);
                         break;
-                    case R.id.pingfang:
+                    case R.id.square:
                         sum = b * b;
                         break;
-                    case R.id.genhao:
+                    case R.id. sqrt:
                         if (b < 0) {
                             Toast.makeText(MainActivity.this, "请输入大于等于0的数", Toast.LENGTH_LONG).show();
                             text.setText("");
@@ -87,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             }
             if (btn.getId() == R.id.add || btn.getId() == R.id.divide || btn.getId() == R.id.cut || btn.getId() == R.id.rid) {
                 //如果已经有两个数，再按运算符就直接把结果运算出来保存到a中然后继续运算
-                if (s == null || s.equals("")) {
+                if ( s.equals("")) {
                     s = "0";
                 }
                 if (option != 0) {
@@ -143,19 +139,19 @@ public class MainActivity extends AppCompatActivity {
 
             //等于，运算结果
             if (btn.getId() == R.id.btnResult) {
-                if (s == null || s.equals("")) {
+                if ( s.equals("")) {
                     s = "0";
                 }
 
                 if(option == 0){
-                    if(fff == 1)
+                    if(d == 1)
                         sum =a +b ;
 
-                    if(fff == 2)
+                    if(d == 2)
                         sum =a -b ;
-                    if(fff == 3)
+                    if(d == 3)
                         sum =a * b ;
-                    if(fff == 4)
+                    if(d == 4)
                         sum =a /b ;
 
                 }
@@ -166,15 +162,15 @@ public class MainActivity extends AppCompatActivity {
                     switch (option) {
                         case 1:
                             sum = sum + b;
-                            fff = 1;
+                            d = 1;
                             break;
                         case 2:
                             sum = sum - b;
-                            fff = 2;
+                            d = 2;
                             break;
                         case 3:
                             sum = sum * b;
-                            fff =3;
+                            d =3;
                             break;
                         case 4:
                             if (b == 0) {
@@ -184,18 +180,18 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                             }
                             sum = sum / b;
-                            fff = 4;
+                            d = 4;
                             break;
                         default:
                             break;
                     }
                 }
-                sumtype = sum % 1;
-                if (sumtype > 0) {
+                decimal = sum % 1;
+                if ( decimal > 0) {
                     pointCount = 1;
                 }
                 s = "" + sum;
-                if (sumtype == 0) {
+                if ( decimal == 0) {
                     int end = (s.toString()).lastIndexOf(".");
                     String str = (s.toString()).substring(0, end);
                     s = "" + Integer.parseInt(str);
@@ -222,6 +218,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //判断横竖屏
         if(this.getResources().getConfiguration().orientation== Configuration.ORIENTATION_PORTRAIT)
         {
             setContentView(R.layout.activity_main);
@@ -248,30 +245,29 @@ public class MainActivity extends AppCompatActivity {
             clear = (Button) findViewById(R.id.clear);
             sin = (Button) findViewById(R.id.sin);
             cos = (Button) findViewById(R.id.cos);
-            pingfang = (Button) findViewById(R.id.pingfang);
-            genhao = (Button) findViewById(R.id.genhao);
-
-            button0.setOnClickListener(lisenter);
-            button1.setOnClickListener(lisenter);
-            button2.setOnClickListener(lisenter);
-            button3.setOnClickListener(lisenter);
-            button4.setOnClickListener(lisenter);
-            button5.setOnClickListener(lisenter);
-            button6.setOnClickListener(lisenter);
-            button7.setOnClickListener(lisenter);
-            button8.setOnClickListener(lisenter);
-            button9.setOnClickListener(lisenter);
-            add.setOnClickListener(lisenter);
-            cut.setOnClickListener(lisenter);
-            rid.setOnClickListener(lisenter);
-            divide.setOnClickListener(lisenter);
-            result.setOnClickListener(lisenter);
-            point.setOnClickListener(lisenter);
-            clear.setOnClickListener(lisenter);
-            sin.setOnClickListener(lisenter);
-            cos.setOnClickListener(lisenter);
-            pingfang.setOnClickListener(lisenter);
-            genhao.setOnClickListener(lisenter);
+            square = (Button) findViewById(R.id.square);
+            sqrt = (Button) findViewById(R.id.sqrt);
+            button0.setOnClickListener(MainListener);
+            button1.setOnClickListener(MainListener);
+            button2.setOnClickListener(MainListener);
+            button3.setOnClickListener(MainListener);
+            button4.setOnClickListener(MainListener);
+            button5.setOnClickListener(MainListener);
+            button6.setOnClickListener(MainListener);
+            button7.setOnClickListener(MainListener);
+            button8.setOnClickListener(MainListener);
+            button9.setOnClickListener(MainListener);
+            add.setOnClickListener(MainListener);
+            cut.setOnClickListener(MainListener);
+            rid.setOnClickListener(MainListener);
+            divide.setOnClickListener(MainListener);
+            result.setOnClickListener(MainListener);
+            point.setOnClickListener(MainListener);
+            clear.setOnClickListener(MainListener);
+            sin.setOnClickListener(MainListener);
+            cos.setOnClickListener(MainListener);
+            square.setOnClickListener(MainListener);
+            sqrt.setOnClickListener(MainListener);
         }
         else if(this.getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE)
         {

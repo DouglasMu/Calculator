@@ -125,7 +125,7 @@ public class Land_MainActivity extends Activity {
             //显示器上的字符串
             String str = input.getText().toString();
             //检测输入是否合法
-            if(equals_flag == false && "0123456789.()sincostanlnlogn!+-×÷√^".indexOf(command) != -1) {
+            if(equals_flag == false && "0123456789.()sin cos tan ln log n!+-×÷√^".indexOf(command) != -1) {
                 //检测显示器上的字符串是否合法
                 if(right(str)) {
                     if("+-×÷√^)".indexOf(command) != -1) {
@@ -150,12 +150,12 @@ public class Land_MainActivity extends Activity {
             else if(tip_i == 0) {
                 TipChecker("#" , command);
             }
-            if("0123456789.()sincostanlnlogn!+-×÷√^".indexOf(command) != -1 && tip_lock) {
+            if("0123456789.()sin cos tan ln log n!+-×÷√^".indexOf(command) != -1 && tip_lock) {
                 Tipcommand[tip_i] = command;
                 tip_i++;
             }
             //若输入正确，则将输入信息显示到显示器上
-            if("0123456789.()sincostanlnlogn!+-×÷√^".indexOf(command) != -1 && tip_lock) { //共25个按键
+            if("0123456789.()sin cos tan ln log n!+-×÷√^".indexOf(command) != -1 && tip_lock) { //共25个按键
                 print(command);
                 //如果输入时退格键，并且是在按=之前
             } else if(command.compareTo("B") == 0 && equals_flag) {
@@ -368,7 +368,7 @@ public class Land_MainActivity extends Activity {
                 tiptype1 = 5;
             } else if("√^".indexOf(tipcommand1) != -1) {
                 tiptype1 = 6;
-            } else if("sincostanloglnn!".indexOf(tipcommand1) != -1) {
+            } else if("sin cos tan log ln n!".indexOf(tipcommand1) != -1) {
                 tiptype1 = 7;
             }
             //定义欲输入的按键类型
@@ -384,7 +384,7 @@ public class Land_MainActivity extends Activity {
                 tiptype2 = 5;
             } else if("√^".indexOf(tipcommand2) != -1) {
                 tiptype2 = 6;
-            } else if("sincostanloglnn!".indexOf(tipcommand2) != -1) {
+            } else if("sin cos tan log ln n!".indexOf(tipcommand2) != -1) {
                 tiptype2 = 7;
             }
 
@@ -709,7 +709,7 @@ public class Land_MainActivity extends Activity {
                         case '÷':
                             weightTemp = 2 + weightPlus;
                             break;
-                        //sincos之类优先级为3
+                        //sin cos之类优先级为3
                         case 's':
                         case 'c':
                         case 't':
