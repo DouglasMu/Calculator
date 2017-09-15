@@ -90,7 +90,7 @@ public class Transform2 extends AppCompatActivity {
                 startActivity(intent2);
                 break;
             case R.id.transform2:
-                Toast.makeText(this, "这个就是进制转换器！", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "已经在进制转换器！", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.exit:

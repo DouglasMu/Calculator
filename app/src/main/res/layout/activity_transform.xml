@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
         android:textSize="25dp"
-        android:text="长度单位转换器"/>
+        android:text="@string/transform1"/>
 
 
     <LinearLayout
@@ -38,7 +38,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="转换"
+                android:text="@string/transform"
                 android:id="@+id/btn_m"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -52,7 +52,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="转换"
+                android:text="@string/transform"
                 android:id="@+id/btn_li"/>
         </TableRow>
         <TableRow
@@ -69,7 +69,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="转换"
+                android:text="@string/transform"
                 android:id="@+id/btn_zhang"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -82,7 +82,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="转换"
+                android:text="@string/transform"
                 android:id="@+id/btn_chi"/>
         </TableRow>
         <TableRow
@@ -99,7 +99,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="转换"
+                android:text="@string/transform"
                 android:id="@+id/btn_cun"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -112,7 +112,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="转换"
+                android:text="@string/transform"
                 android:id="@+id/btn_fen"/>
         </TableRow>
         <TableRow
@@ -129,7 +129,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="转换"
+                android:text="@string/transform"
                 android:id="@+id/btn_mile"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -142,7 +142,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="转换"
+                android:text="@string/transform"
                 android:id="@+id/btn_foot"/>
         </TableRow>
         <TableRow
@@ -159,7 +159,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="转换"
+                android:text="@string/transform"
                 android:id="@+id/btn_inch"/>
 
         </TableRow>

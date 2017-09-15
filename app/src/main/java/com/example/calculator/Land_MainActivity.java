@@ -7,12 +7,14 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.app.Activity;
+import android.widget.Toast;
 
 public class Land_MainActivity extends Activity {
     //0~9十个按键
@@ -564,54 +566,37 @@ public class Land_MainActivity extends Activity {
                 break;
             case 5:
                 tipmessage = tipmessage + "sin 函数用法示例：\n" +
-                        "DEG：sin30 = 0.5      RAD：sin1 = 0.84\n" +
-                        "注：与其他函数一起使用时要加括号，如：\n" +
-                        "sin(cos45)，而不是sincos45" ;
+                        "DEG：sin30 = 0.5      RAD：sin1 = 0.84\n" ;
                 break;
             case 6:
                 tipmessage = tipmessage + "cos 函数用法示例：\n" +
-                        "DEG：cos60 = 0.5      RAD：cos1 = 0.54\n" +
-                        "注：与其他函数一起使用时要加括号，如：\n" +
-                        "cos(sin45)，而不是cossin45" ;
+                        "DEG：cos60 = 0.5      RAD：cos1 = 0.54\n"  ;
                 break;
             case 7:
                 tipmessage = tipmessage + "tan 函数用法示例：\n" +
-                        "DEG：tan45 = 1      RAD：tan1 = 1.55\n" +
-                        "注：与其他函数一起使用时要加括号，如：\n" +
-                        "tan(cos45)，而不是tancos45" ;
+                        "DEG：tan45 = 1      RAD：tan1 = 1.55\n" ;
                 break;
             case 8:
                 tipmessage = tipmessage + "log 函数用法示例：\n" +
-                        "log10 = log(5+5) = 1\n" +
-                        "注：与其他函数一起使用时要加括号，如：\n" +
-                        "log(tan45)，而不是logtan45" ;
+                        "log10 = log(5+5) = 1\n" ;
                 break;
             case 9:
                 tipmessage = tipmessage + "ln 函数用法示例：\n" +
-                        "ln10 = le(5+5) = 2.3   lne = 1\n" +
-                        "注：与其他函数一起使用时要加括号，如：\n" +
-                        "ln(tan45)，而不是lntan45" ;
+                        "ln10 = le(5+5) = 2.3   lne = 1\n" ;
                 break;
             case 10:
                 tipmessage = tipmessage + "n! 函数用法示例：\n" +
-                        "n!3 = n!(1+2) = 3×2×1 = 6\n" +
-                        "注：与其他函数一起使用时要加括号，如：\n" +
-                        "n!(log1000)，而不是n!log1000" ;
+                        "n!3 = n!(1+2) = 3×2×1 = 6\n" ;
                 break;
             case 11:
                 tipmessage = tipmessage + "√ 用法示例：开任意次根号\n" +
-                        "如：27开3次根为  27√3 = 3\n" +
-                        "注：与其他函数一起使用时要加括号，如：\n" +
-                        "(函数)√(函数) ， (n!3)√(log100) = 2.45";
+                        "如：27开3次根为  27√3 = 3\n" ;
                 break;
             case 12:
                 tipmessage = tipmessage + "^ 用法示例：开任意次平方\n" +
-                        "如：2的3次方为  2^3 = 8\n" +
-                        "注：与其他函数一起使用时要加括号，如：\n" +
-                        "(函数)√(函数) ， (n!3)^(log100) = 36";
+                        "如：2的3次方为  2^3 = 8\n" ;
                 break;
         }
-        //将提示信息显示到tip
         tip.setText(tipmessage);
     }
     /*
@@ -991,5 +976,27 @@ public class Land_MainActivity extends Activity {
             input.setText("\""+str+"\""+": "+message);
             tip.setText(message+"\n"+"计算完毕，继续请按 C");
         }
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id) {
+            case R.id.calculator:
+                Toast.makeText(this, "已经在计算器！", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.transform:
+                Intent intent=new Intent(Land_MainActivity.this,Transform1.class);
+                startActivity(intent);
+                break;
+            case R.id.transform2:
+                Intent intent2=new Intent(Land_MainActivity.this,Transform2.class);
+                startActivity(intent2);
+                break;
+            case R.id.exit:
+                System.exit(0);
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 }

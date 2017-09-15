@@ -14,13 +14,13 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     public double pi=4*Math.atan(1);
-    TextView textView;
+    TextView textView;//显示窗口
     Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button0;//数字键
     Button add, cut, rid, divide;//四则运算符号
     Button result;
     Button point;
     Button clear;//清屏
-    Button sin, cos, square, sqrt;//s正弦  余弦 平方  根号
+    Button sin, cos, square, sqrt;//正弦  余弦 平方  根号
     int pointCount = 0;
     int option = 0;//运算符状态
     int d = 0;//连加连减判断符号
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             TextView text = (TextView) findViewById(R.id.textView);
             String s = text.getText().toString();//获取文本框显示的字符串
             Button btn = (Button) v;
-            //数字的输入
+            //如果输入的是数字
             if (btn.getId() == R.id.btn0 || btn.getId() == R.id.btn1 || btn.getId() == R.id.btn2 || btn.getId() == R.id.btn3
                     || btn.getId() == R.id.btn4 || btn.getId() == R.id.btn5 || btn.getId() == R.id.btn6 ||
                     btn.getId() == R.id.btn7 || btn.getId() == R.id.btn8 || btn.getId() == R.id.btn9 ||
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 text.setText(s);
 
             }
-            //运算符的输入
+            //如果输入的是运算符
             if (btn.getId() == R.id.sin || btn.getId() == R.id.cos || btn.getId() == R.id.square || btn.getId() == R.id. sqrt) {
                 if ( s.equals("")) {
                     s = "0";
@@ -224,7 +224,6 @@ public class MainActivity extends AppCompatActivity {
             setContentView(R.layout.activity_main);
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
-
             textView = (TextView) findViewById(R.id.textView);
             button1 = (Button) findViewById(R.id.btn1);
             button2 = (Button) findViewById(R.id.btn2);
@@ -287,7 +286,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (id) {
             case R.id.calculator:
-                Toast.makeText(this, "这个就是计算器！", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "已经在计算器！", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.transform:
                 Intent intent=new Intent(MainActivity.this,Transform1.class);

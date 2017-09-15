@@ -285,7 +285,7 @@ public class Transform1 extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.transform:
-                Toast.makeText(this, "这个就是单位转换器！", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "已经在单位转换器！", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.transform2:
                 Intent intent2=new Intent(Transform1.this,Transform2.class);

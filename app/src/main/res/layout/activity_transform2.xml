@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/btwo"
-                android:text="转换"/>
+                android:text="@string/transform"/>
         </TableRow>
         <TableRow
             android:layout_width="wrap_content"
@@ -51,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/bten"
-                android:text="转换"/>
+                android:text="@string/transform"/>
 
         </TableRow>
         <TableRow
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/bsixt"
-                android:text="转换"/>
+                android:text="@string/transform"/>
         </TableRow>
 
         <Button
