@@ -368,7 +368,7 @@ public class Land_MainActivity extends Activity {
                 tiptype1 = 5;
             } else if("√^".indexOf(tipcommand1) != -1) {
                 tiptype1 = 6;
-            } else if("sin cos tan log ln n!".indexOf(tipcommand1) != -1) {
+            } else if("sincostanloglnn!".indexOf(tipcommand1) != -1) {
                 tiptype1 = 7;
             }
             //定义欲输入的按键类型
@@ -384,7 +384,7 @@ public class Land_MainActivity extends Activity {
                 tiptype2 = 5;
             } else if("√^".indexOf(tipcommand2) != -1) {
                 tiptype2 = 6;
-            } else if("sin cos tan log ln n!".indexOf(tipcommand2) != -1) {
+            } else if("sincostanloglnn!".indexOf(tipcommand2) != -1) {
                 tiptype2 = 7;
             }
 
@@ -709,7 +709,7 @@ public class Land_MainActivity extends Activity {
                         case '÷':
                             weightTemp = 2 + weightPlus;
                             break;
-                        //sin cos之类优先级为3
+                        //sincos之类优先级为3
                         case 's':
                         case 'c':
                         case 't':
