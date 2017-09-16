@@ -57,7 +57,6 @@ public class Land_MainActivity extends Activity {
             input = (EditText) findViewById(R.id.input);
             mem = (TextView) findViewById(R.id.mem);
             tip = (TextView) findViewById(R.id.tip);
-            // _drg = (TextView)findViewById(R.id._drg);
             btn[0] = (Button) findViewById(R.id.zero);
             btn[1] = (Button) findViewById(R.id.one);
             btn[2] = (Button) findViewById(R.id.two);
@@ -317,21 +316,6 @@ public class Land_MainActivity extends Activity {
             return 2;
         } else { return 1; }
     }
-    /*
-     * 检测函数，对str进行前后语法检测
-     * 为Tip的提示方式提供依据，与TipShow()配合使用
-     *  编号 字符    其后可以跟随的合法字符
-     *   1  （                 数字|（|-|.|函数
-     *   2   ）                算符|）|√ ^
-     *   3  .      数字|算符|）|√ ^
-     *   4   数字        .|数字|算符|）|√ ^
-     *   5   算符             数字|（|.|函数
-     *   6 √ ^     （ |. | 数字
-     *   7  函数           数字|（|.
-     *
-     * 小数点前后均可省略，表示0
-     * 数字第一位可以为0
-     */
     private void TipChecker(String tipcommand1,String tipcommand2) {
         //Tipcode1表示错误类型，Tipcode2表示名词解释类型
         int Tipcode1 = 0 , Tipcode2 = 0;
@@ -599,14 +583,7 @@ public class Land_MainActivity extends Activity {
         }
         tip.setText(tipmessage);
     }
-    /*
-     * 整个计算核心，只要将表达式的整个字符串传入calc().process()就可以实行计算了
-     * 算法包括以下几部分：
-     * 1、计算部分           process(String str)  当然，这是建立在查错无错误的情况下
-     * 2、数据格式化      FP(double n)         使数据有相当的精确度
-     * 3、阶乘算法           N(double n)          计算n!，将结果返回
-     * 4、错误提示          showError(int code ,String str)  将错误返回
-     */
+
     public class calc {
         public calc(){
 

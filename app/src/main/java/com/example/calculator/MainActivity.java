@@ -1,5 +1,4 @@
 package com.example.calculator;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -216,7 +215,33 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
 
+        switch (id) {
+            case R.id.calculator:
+                Toast.makeText(this, "已经在计算器！", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.transform:
+                Intent intent=new Intent(MainActivity.this,Transform1.class);
+                startActivity(intent);
+                break;
+            case R.id.transform2:
+                Intent intent2=new Intent(MainActivity.this,Transform2.class);
+                startActivity(intent2);
+                break;
+            case R.id.exit:
+                System.exit(0);
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -279,31 +304,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main,menu);
-        return true;
-    }
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
 
-        switch (id) {
-            case R.id.calculator:
-                Toast.makeText(this, "已经在计算器！", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.transform:
-                Intent intent=new Intent(MainActivity.this,Transform1.class);
-                startActivity(intent);
-                break;
-            case R.id.transform2:
-                Intent intent2=new Intent(MainActivity.this,Transform2.class);
-                startActivity(intent2);
-                break;
-            case R.id.exit:
-                System.exit(0);
-        }
-
-
-        return super.onOptionsItemSelected(item);
-    }
 }
