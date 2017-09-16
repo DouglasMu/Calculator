@@ -15,9 +15,11 @@ import java.util.regex.Matcher;
 public class Transform2 extends AppCompatActivity {
     EditText e2,e10,e16;
     String s2,s10,s16;
-    Button b2,b10,b16,clear22;
+    Button b2,b10,b16,clear22;//定义按钮
     private Dialog mDialog;
-    int i2,i10,i16;
+    int i10;
+
+    //判断输入是数字，是数字返回true
     public boolean isNumeric(String str){
         Pattern pattern = Pattern.compile("[0-9]*");
         Matcher isNum = pattern.matcher(str);
