@@ -292,9 +292,7 @@ public class Land_MainActivity extends Activity {
     }
 
     private int TTO(String str) {
-        if((str.charAt(str.length() - 1) == 'n' &&
-                str.charAt(str.length() - 2) == 'i' &&
-                str.charAt(str.length() - 3) == 's') ||
+        if((str.charAt(str.length() - 1) == 'n' && str.charAt(str.length() - 2) == 'i' && str.charAt(str.length() - 3) == 's') ||
                 (str.charAt(str.length() - 1) == 's' &&
                         str.charAt(str.length() - 2) == 'o' &&
                         str.charAt(str.length() - 3) == 'c') ||
@@ -372,7 +370,7 @@ public class Land_MainActivity extends Activity {
                         Tipcode1 = 2;
                     break;
                 case 3:
-                    //“.”后面接左括号或者“sincos...”
+                    //“.”后面接左括号或者“sin cos...”
                     if(tiptype2 == 1 || tiptype2 == 7)
                         Tipcode1 = 3;
                     //连续输入两个“.”
@@ -380,7 +378,7 @@ public class Land_MainActivity extends Activity {
                         Tipcode1 = 8;
                     break;
                 case 4:
-                    //数字后面直接接左括号或者“sincos...”
+                    //数字后面直接接左括号或者“sin cos...”
                     if(tiptype2 == 1 || tiptype2 == 7)
                         Tipcode1 = 4;
                     break;
@@ -390,12 +388,12 @@ public class Land_MainActivity extends Activity {
                         Tipcode1 = 5;
                     break;
                 case 6:
-                    //“√^”后面直接接右括号，“+-x÷√^”以及“sincos...”
+                    //“√^”后面直接接右括号，“+-x÷√^”以及“sin cos...”
                     if(tiptype2 == 2 || tiptype2 == 5 || tiptype2 == 6 || tiptype2 == 7)
                         Tipcode1 = 6;
                     break;
                 case 7:
-                    //“sincos...”后面直接接右括号“+-x÷√^”以及“sincos...”
+                    //“sincos...”后面直接接右括号“+-x÷√^”以及“sin cos...”
                     if(tiptype2 == 2 || tiptype2 == 5 || tiptype2 == 6 || tiptype2 == 7)
                         Tipcode1 = 7;
                     break;
@@ -487,10 +485,7 @@ public class Land_MainActivity extends Activity {
         //显示帮助和错误信息
         TipShow(bracket , Tipcode1 , Tipcode2 , tipcommand1 , tipcommand2);
     }
-
-
     //反馈Tip信息，加强人机交互，与TipChecker()配合使用
-
     private void TipShow(int bracket , int tipcode1 , int tipcode2 ,
                          String tipcommand1 , String tipcommand2) {
         String tipmessage = "";
@@ -597,9 +592,11 @@ public class Land_MainActivity extends Activity {
         public void process(String str) {
             int weightPlus = 0, topOp = 0,
                     topNum = 0, flag = 1, weightTemp = 0;
-            //weightPlus为同一（）下的基本优先级，weightTemp临时记录优先级的变化
-            //topOp为weight[]，operator[]的计数器；topNum为number[]的计数器
-            //flag为正负数的计数器，1为正数，-1为负数
+             /**
+             *eightPlus为同一（）下的基本优先级，weightTemp临时记录优先级的变化
+             *topOp为weight[]，operator[]的计数器；topNum为number[]的计数器
+             *flag为正负数的计数器，1为正数，-1为负数
+             */
             int weight[];  //保存operator栈中运算符的优先级，以topOp计数
             double number[];  //保存数字，以topNum计数
             char ch, ch_gai, operator[];//operator[]保存运算符，以topOp计数
