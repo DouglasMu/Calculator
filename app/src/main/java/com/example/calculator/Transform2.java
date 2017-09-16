@@ -34,12 +34,10 @@ public class Transform2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transform2);
-
         b2 = (Button) findViewById(R.id.btwo);
         b10 = (Button) findViewById(R.id.bten);
         b16 = (Button) findViewById(R.id.bsixt);
         clear22 = (Button) findViewById(R.id.clear22);
-
         e2 = (EditText) findViewById(R.id.two);
         e10 = (EditText) findViewById(R.id.ten);
         e16 = (EditText) findViewById(R.id.sixt);

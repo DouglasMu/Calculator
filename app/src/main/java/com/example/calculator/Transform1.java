@@ -64,6 +64,7 @@ public class Transform1 extends AppCompatActivity {
                 mDialog.cancel();
             }
         };
+        //清屏
         clear2.setOnClickListener((new View.OnClickListener() {
             public void onClick(View v) {
                 e_li.setText("");
