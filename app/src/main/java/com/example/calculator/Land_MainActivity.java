@@ -745,7 +745,7 @@ public class Land_MainActivity extends Activity {
                                     }
                                     topNum++;
                                     break;
-                                //log
+                                //符号log
                                 case 'g':
                                     if(number[topNum-1] <= 0) {
                                         showError(2,str_old);
@@ -754,7 +754,7 @@ public class Land_MainActivity extends Activity {
                                     number[topNum-1] = Math.log10(number[topNum-1]);
                                     topNum++;
                                     break;
-                                //ln
+                                //符号ln
                                 case 'l':
                                     if(number[topNum-1] <= 0) {
                                         showError(2,str_old);
@@ -776,12 +776,12 @@ public class Land_MainActivity extends Activity {
                                     topNum++;
                                     break;
                             }
-                            //继续取堆栈的下一个元素进行判断
-                            topNum--;
+
+                            topNum--; //继续取堆栈的下一个元素进行判断
                             topOp--;
                         }
-                        //将运算符如堆栈
-                        weight[topOp] = weightTemp;
+
+                        weight[topOp] = weightTemp;//将运算符入堆栈
                         operator[topOp] = ch;
                         topOp++;
                     }
@@ -790,8 +790,8 @@ public class Land_MainActivity extends Activity {
             }
             //依次取出堆栈的运算符进行运算
             while (topOp>0) {
-                //+-x直接将数组的后两位数取出运算
-                switch (operator[topOp-1]) {
+
+                switch (operator[topOp-1]) {                   //+-x直接将数组的后两位数取出运算
                     case '+':
                         number[topNum-2]+=number[topNum-1];
                         break;
@@ -801,8 +801,8 @@ public class Land_MainActivity extends Activity {
                     case '×':
                         number[topNum-2]*=number[topNum-1];
                         break;
-                    //涉及到除法时要考虑除数不能为零的情况
-                    case '÷':
+
+                    case '÷':                                 //涉及到除法时要考虑除数不能为零的情况
                         if (number[topNum-1] == 0) {
                             showError(1,str_old);
                             return;
@@ -866,6 +866,8 @@ public class Land_MainActivity extends Activity {
                         number[topNum-1] = Math.log10(number[topNum-1]);
                         topNum++;
                         break;
+
+
                     //自然对数ln
                     case 'l':
                         if(number[topNum-1] <= 0) {
@@ -875,6 +877,8 @@ public class Land_MainActivity extends Activity {
                         number[topNum-1] = Math.log(number[topNum-1]);
                         topNum++;
                         break;
+
+
                     //阶乘
                     case '!':
                         if(number[topNum-1] > 170) {
@@ -909,8 +913,6 @@ public class Land_MainActivity extends Activity {
          * 本格式精度为15位
          */
         public double FP(double n) {
-            //NumberFormat format=NumberFormat.getInstance();  //创建一个格式化类f
-            //format.setMaximumFractionDigits(18);    //设置小数位的格式
             DecimalFormat format = new DecimalFormat("0.#############");
             return Double.parseDouble(format.format(n));
         }
