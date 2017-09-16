@@ -65,7 +65,7 @@ public class Transform2 extends AppCompatActivity {
                     e16.setText(s16);
                 }else{
                     mDialog = new Dialog(Transform2.this);
-                    mDialog.setTitle("提示");
+                    mDialog.setTitle("警告！！！");
                     mDialog.setCancelable(false);
                     mDialog.setContentView(R.layout.error);
                     Button wButton = (Button) mDialog.findViewById(R.id.button);
@@ -89,7 +89,7 @@ public class Transform2 extends AppCompatActivity {
                 e16.setText(s16);
                 }else{
                     mDialog = new Dialog(Transform2.this);
-                    mDialog.setTitle("提示");
+                    mDialog.setTitle("警告！！！");
                     mDialog.setCancelable(false);
                     mDialog.setContentView(R.layout.error);
                     Button wButton = (Button) mDialog.findViewById(R.id.button);
@@ -110,7 +110,7 @@ public class Transform2 extends AppCompatActivity {
                     e10.setText(s10);
                 }else{
                     mDialog = new Dialog(Transform2.this);
-                    mDialog.setTitle("提示");
+                    mDialog.setTitle("警告！！！");
                     mDialog.setCancelable(false);
                     mDialog.setContentView(R.layout.error);
                     Button wButton = (Button) mDialog.findViewById(R.id.button);
@@ -121,7 +121,6 @@ public class Transform2 extends AppCompatActivity {
         });
     }
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main,menu);
         return true;
     }

@@ -138,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
-            //等于，运算结果
             if (btn.getId() == R.id.btnResult) {
                 if ( s.equals("")) {
                     s = "0";
@@ -175,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case 4:
                             if (b == 0) {
-                                Toast.makeText(MainActivity.this, "0不能为除数", Toast.LENGTH_LONG).show();
+                                Toast.makeText(MainActivity.this, "0不能当除数", Toast.LENGTH_LONG).show();
                                 text.setText("");
                                 flag = false;
                                 break;
@@ -206,8 +205,8 @@ public class MainActivity extends AppCompatActivity {
                 flag = true;
 
             }
-            //清除
-            if (btn.getId() == R.id.clear) {
+
+            if (btn.getId() == R.id.clear) {//清除功能
                 text.setText("");
                 pointCount = 0;
                 option = 0;
@@ -215,6 +214,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
+    //以下是右上角的菜单功能
+    //可以切换计算器的功能
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main,menu);

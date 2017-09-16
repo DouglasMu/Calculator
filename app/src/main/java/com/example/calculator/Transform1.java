@@ -98,7 +98,7 @@ public class Transform1 extends AppCompatActivity {
                 }
                 else{
                     mDialog = new Dialog(Transform1.this);
-                    mDialog.setTitle("提示");
+                    mDialog.setTitle("警告！！！");
                     mDialog.setCancelable(false);
                     mDialog.setContentView(R.layout.error);
                     Button wButton = (Button) mDialog.findViewById(R.id.button);
@@ -133,7 +133,7 @@ public class Transform1 extends AppCompatActivity {
                     e_inch.setText(String.format("%.5f", d_inch));
                 }else {
                     mDialog = new Dialog(Transform1.this);
-                    mDialog.setTitle("提示");
+                    mDialog.setTitle("警告！！！");
                     mDialog.setCancelable(false);
                     mDialog.setContentView(R.layout.error);
                     Button wButton = (Button) mDialog.findViewById(R.id.button);
@@ -168,7 +168,7 @@ public class Transform1 extends AppCompatActivity {
                     e_inch.setText(String.format("%.2f", d_inch));
                 }else{
                     mDialog = new Dialog(Transform1.this);
-                    mDialog.setTitle("提示");
+                    mDialog.setTitle("警告！！！");
                     mDialog.setCancelable(false);
                     mDialog.setContentView(R.layout.error);
                     Button wButton = (Button) mDialog.findViewById(R.id.button);
@@ -203,7 +203,7 @@ public class Transform1 extends AppCompatActivity {
                     e_inch.setText(String.format("%.2f", d_inch));
                 }else{
                     mDialog = new Dialog(Transform1.this);
-                    mDialog.setTitle("提示");
+                    mDialog.setTitle("警告！！！");
                     mDialog.setCancelable(false);
                     mDialog.setContentView(R.layout.error);
                     Button wButton = (Button) mDialog.findViewById(R.id.button);
@@ -238,7 +238,7 @@ public class Transform1 extends AppCompatActivity {
                     e_inch.setText(String.format("%.2f", d_inch));
                 }else{
                     mDialog = new Dialog(Transform1.this);
-                    mDialog.setTitle("提示");
+                    mDialog.setTitle("警告！！！");
                     mDialog.setCancelable(false);
                     mDialog.setContentView(R.layout.error);
                     Button wButton = (Button) mDialog.findViewById(R.id.button);
@@ -273,7 +273,7 @@ public class Transform1 extends AppCompatActivity {
                     e_inch.setText(String.format("%.2f", d_inch));
                 }else {
                     mDialog = new Dialog(Transform1.this);
-                    mDialog.setTitle("提示");
+                    mDialog.setTitle("警告！！！");
                     mDialog.setCancelable(false);
                     mDialog.setContentView(R.layout.error);
                     Button wButton = (Button) mDialog.findViewById(R.id.button);
@@ -308,7 +308,7 @@ public class Transform1 extends AppCompatActivity {
                     e_inch.setText(String.format("%.2f", d_inch));
                 }else{
                     mDialog = new Dialog(Transform1.this);
-                    mDialog.setTitle("提示");
+                    mDialog.setTitle("警告！！！");
                     mDialog.setCancelable(false);
                     mDialog.setContentView(R.layout.error);
                     Button wButton = (Button) mDialog.findViewById(R.id.button);
@@ -343,7 +343,7 @@ public class Transform1 extends AppCompatActivity {
                 e_inch.setText(String.format("%.4f", d_inch));
                 }else {
                     mDialog = new Dialog(Transform1.this);
-                    mDialog.setTitle("提示");
+                    mDialog.setTitle("警告！！！");
                     mDialog.setCancelable(false);
                     mDialog.setContentView(R.layout.error);
                     Button wButton = (Button) mDialog.findViewById(R.id.button);
@@ -378,7 +378,7 @@ public class Transform1 extends AppCompatActivity {
                     e_foot.setText(String.format("%.4f", d_foot));
                 }else{
                     mDialog = new Dialog(Transform1.this);
-                    mDialog.setTitle("提示");
+                    mDialog.setTitle("警告！！");
                     mDialog.setCancelable(false);
                     mDialog.setContentView(R.layout.error);
                     Button wButton = (Button) mDialog.findViewById(R.id.button);
@@ -401,7 +401,7 @@ public class Transform1 extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.transform:
-                Toast.makeText(this, "已经在单位转换器！", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "您已经在单位转换器！", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.transform2:
                 Intent intent2=new Intent(Transform1.this,Transform2.class);

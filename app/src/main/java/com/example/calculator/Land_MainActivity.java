@@ -583,7 +583,7 @@ public class Land_MainActivity extends Activity {
         }
         tip.setText(tipmessage);
     }
-
+    //将运算的数字与符号运用下面的代码进行运算   是核心部分
     public class calc {
         public calc(){
 
@@ -954,6 +954,8 @@ public class Land_MainActivity extends Activity {
             tip.setText(message+"\n"+"计算完毕，继续请按 C");
         }
     }
+    //以下是右上角的菜单功能
+    //可以切换计算器的功能
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
