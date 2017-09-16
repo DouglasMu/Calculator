@@ -19,7 +19,7 @@ public class Transform2 extends AppCompatActivity {
     private Dialog mDialog;
     int i10;
 
-    //判断输入是数字，是数字返回true
+    //判断输入是数字，是数字返回true，否则返回false
     public boolean isNumeric(String str){
         Pattern pattern = Pattern.compile("[0-9]*");
         Matcher isNum = pattern.matcher(str);
