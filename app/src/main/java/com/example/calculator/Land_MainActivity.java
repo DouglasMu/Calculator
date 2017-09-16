@@ -117,7 +117,7 @@ public class Land_MainActivity extends Activity {
     int tip_i = 0;
     private OnClickListener actionPerformed = new OnClickListener() {
         public void onClick(View v) {
-            //按键上的命令获取
+            //获取按键命令
             String command = ((Button)v).getText().toString();
             //显示器上的字符串
             String str = input.getText().toString();
@@ -488,9 +488,9 @@ public class Land_MainActivity extends Activity {
         TipShow(bracket , Tipcode1 , Tipcode2 , tipcommand1 , tipcommand2);
     }
 
-    /*
-     * 反馈Tip信息，加强人机交互，与TipChecker()配合使用
-     */
+
+    //反馈Tip信息，加强人机交互，与TipChecker()配合使用
+
     private void TipShow(int bracket , int tipcode1 , int tipcode2 ,
                          String tipcommand1 , String tipcommand2) {
         String tipmessage = "";

@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+
 //s实现单位转换功能的代码
 public class Transform1 extends AppCompatActivity {
     EditText e_li, e_m, e_chi, e_zhang, e_cun, e_fen, e_mile, e_foot, e_inch;
@@ -19,6 +21,8 @@ public class Transform1 extends AppCompatActivity {
     Button b_li, b_m, b_chi, b_zhang, b_cun, b_fen, b_mile, b_foot, b_inch,  clear2;
     double d_li, d_m, d_chi, d_zhang, d_cun, d_fen, d_mile, d_foot, d_inch;
     private Dialog mDialog;
+
+
     //判断输入是数字，是数字返回true，否则返回false
     public boolean isNumeric(String str){
         Pattern pattern = Pattern.compile("[0-9]*");
@@ -33,7 +37,7 @@ public class Transform1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transform);
-
+        //获取
         b_li = (Button) findViewById(R.id.btn_li);
         b_m = (Button) findViewById(R.id.btn_m);
         b_zhang = (Button) findViewById(R.id.btn_zhang);
