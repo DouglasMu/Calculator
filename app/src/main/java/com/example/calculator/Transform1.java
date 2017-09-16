@@ -57,6 +57,7 @@ public class Transform1 extends AppCompatActivity {
         e_mile = (EditText) findViewById(R.id.et_mile);
         e_foot = (EditText) findViewById(R.id.et_foot);
         e_inch = (EditText) findViewById(R.id.et_inch);
+        //定义监听器
         final View.OnClickListener wButtonOnClick=new  View.OnClickListener() {
             @Override
             public void onClick(View view) {
