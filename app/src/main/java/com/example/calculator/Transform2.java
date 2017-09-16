@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+
+//实现进制转换功能的代码
 public class Transform2 extends AppCompatActivity {
     EditText e2,e10,e16;
     String s2,s10,s16;

@@ -1,5 +1,4 @@
 package com.example.calculator;
-import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -14,7 +13,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     public double pi=4*Math.atan(1);//定义π的数值大小以便计算sin cos
-   // private Dialog mDlgLogin;
     TextView textView;//显示窗口
     Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button0;//数字键
     Button add, cut, rid, divide;//四则运算符号

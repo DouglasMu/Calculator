@@ -2,7 +2,6 @@ package com.example.calculator;
 
 import java.text.DecimalFormat;
 import java.util.StringTokenizer;
-
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
