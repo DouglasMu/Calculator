@@ -20,7 +20,13 @@ public class Transform2 extends AppCompatActivity {
     Button b2,b10,b16,clear22;//定义按钮
     private Dialog mDialog;
     int i10;
-
+    //判断是否为空
+    public static boolean isEmpty(CharSequence str) {
+        if (str == null || str.length() == 0)
+            return true;
+        else
+            return false;
+    }
     //判断输入是数字，是数字返回true，否则返回false
     public boolean isNumeric(String str){
         Pattern pattern = Pattern.compile("[0-9]*");
@@ -59,7 +65,7 @@ public class Transform2 extends AppCompatActivity {
             public void onClick(View v) {
                 s2 = e2.getText().toString();
                 boolean s=isNumeric(s2);
-                if(s==true&&s2!="") {
+                if(s==true&&isEmpty(s2)==false) {
                     s10 = Integer.valueOf(s2, 2).toString();
                     s16 = Integer.toHexString(Integer.parseInt(s2, 2));
 
@@ -80,7 +86,7 @@ public class Transform2 extends AppCompatActivity {
             public void onClick(View v) {
                 s10 = e10.getText().toString();
                 boolean s=isNumeric(s10);
-                if(s==true&&s10!=null){
+                if(s==true&&isEmpty(s10)==false){
                 i10 = Integer.parseInt(s10);
 
                 s2 = Integer.toBinaryString(i10);
@@ -104,7 +110,7 @@ public class Transform2 extends AppCompatActivity {
             public void onClick(View v) {
                 s16 = e16.getText().toString();
                 boolean s=isNumeric(s16);
-                if (s==true&&s16!="") {
+                if (s==true&&isEmpty(s16)==false) {
                     s2 = Integer.toBinaryString(Integer.valueOf(s16, 16));
                     s10 = Integer.valueOf(s16, 16).toString();
 

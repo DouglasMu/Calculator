@@ -21,7 +21,13 @@ public class Transform1 extends AppCompatActivity {
     Button b_li, b_m, b_chi, b_zhang, b_cun, b_fen, b_mile, b_foot, b_inch,  clear2;
     double d_li, d_m, d_chi, d_zhang, d_cun, d_fen, d_mile, d_foot, d_inch;
     private Dialog mDialog;
-
+//判断是否为空
+    public static boolean isEmpty(CharSequence str) {
+        if (str == null || str.length() == 0)
+            return true;
+        else
+            return false;
+    }
 
     //判断输入是数字，是数字返回true，否则返回false
     public boolean isNumeric(String str){
@@ -117,7 +123,7 @@ public class Transform1 extends AppCompatActivity {
             public void onClick(View v) {
                 s_li = e_li.getText().toString();
                 boolean s=isNumeric(s_li);
-                if(s==true&&s_li!="") {
+                if(s==true&&isEmpty(s_li)==false) {
                     d_li = Double.parseDouble(s_li);
 
                     d_m = d_li * 500;
@@ -152,7 +158,7 @@ public class Transform1 extends AppCompatActivity {
             public void onClick(View v) {
                 s_zhang = e_zhang.getText().toString();
                 boolean s=isNumeric(s_zhang);
-                if(s==true&&s_zhang!="") {
+                if(s==true&&isEmpty(s_zhang)==false) {
                     d_zhang = Double.parseDouble(s_zhang);
 
                     d_m = d_zhang * 3.3333333;
@@ -222,7 +228,7 @@ public class Transform1 extends AppCompatActivity {
             public void onClick(View v) {
                 s_cun = e_cun.getText().toString();
                 boolean s=isNumeric(s_cun);
-                if(s==true&&s_cun!="") {
+                if(s==true&&isEmpty(s_cun)==false) {
                     d_cun = Double.parseDouble(s_cun);
 
                     d_m = d_cun * 0.033333333;
@@ -257,7 +263,7 @@ public class Transform1 extends AppCompatActivity {
             public void onClick(View v) {
                 s_fen = e_fen.getText().toString();
                 boolean s=isNumeric(s_fen);
-                if(s==true&&s_fen!="") {
+                if(s==true&&isEmpty(s_fen)==false) {
                     d_fen = Double.parseDouble(s_fen);
 
                     d_m = d_fen * 0.0033333333;
@@ -292,7 +298,7 @@ public class Transform1 extends AppCompatActivity {
             public void onClick(View v) {
                 s_mile = e_mile.getText().toString();
                 boolean s=isNumeric(s_mile);
-                if(s==true&&s_mile!="") {
+                if(s==true&&isEmpty(s_mile)==false) {
                     d_mile = Double.parseDouble(s_mile);
 
                     d_m = d_mile * 1609.344;
@@ -327,7 +333,7 @@ public class Transform1 extends AppCompatActivity {
             public void onClick(View v) {
                 s_foot = e_foot.getText().toString();
                 boolean s=isNumeric(s_foot);
-                if(s==true&&s_foot!=""){
+                if(s==true&&isEmpty(s_foot)==false){
                 d_foot = Double.parseDouble(s_foot);
 
                 d_m = d_foot * 0.3048;
@@ -362,7 +368,7 @@ public class Transform1 extends AppCompatActivity {
             public void onClick(View v) {
                 s_inch = e_inch.getText().toString();
                 boolean s=isNumeric(s_inch);
-                if(s==true&&s_inch!="") {
+                if(s==true&&isEmpty(s_inch)==false) {
                     d_inch = Double.parseDouble(s_inch);
 
                     d_m = d_inch * 0.0254;
